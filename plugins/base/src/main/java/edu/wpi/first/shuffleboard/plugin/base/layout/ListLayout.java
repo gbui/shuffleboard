@@ -85,7 +85,7 @@ public class ListLayout implements Layout {
         propertySheet.getItems().add(new ExtendedPropertySheet.PropertyItem<>(widget.titleProperty()));
         propertySheet.getItems().addAll(
             widget.getProperties().stream()
-                .map(ExtendedPropertySheet.PropertyItem::new)
+                .map(property -> new ExtendedPropertySheet.PropertyItem(property))
                 .collect(Collectors.toList()));
         Dialog<ButtonType> dialog = new Dialog<>();
         dialog.setTitle("Edit properties");

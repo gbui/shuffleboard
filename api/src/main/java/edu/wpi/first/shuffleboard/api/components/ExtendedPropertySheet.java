@@ -66,7 +66,7 @@ public class ExtendedPropertySheet extends PropertySheet {
   public ExtendedPropertySheet(Collection<? extends Property<?>> properties) {
     this();
     getItems().setAll(properties.stream()
-        .map(PropertyItem::new)
+        .map(property -> new PropertyItem(property))
         .collect(Collectors.toList()));
   }
 

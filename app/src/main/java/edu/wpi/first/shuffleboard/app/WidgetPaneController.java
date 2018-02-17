@@ -600,7 +600,7 @@ public class WidgetPaneController {
     Dialog<ButtonType> dialog = new Dialog<>();
     if (tile.getContent() instanceof Widget) {
       ((Widget) tile.getContent()).getProperties().stream()
-          .map(ExtendedPropertySheet.PropertyItem::new)
+          .map(property -> new ExtendedPropertySheet.PropertyItem(property))
           .forEachOrdered(propertySheet.getItems()::add);
     }
 
